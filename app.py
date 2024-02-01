@@ -5,7 +5,6 @@ from PIL import Image, ImageOps
 st.set_page_config(
     page_title = 'Balcony Detection',
     page_icon = "🪟",
-    #layout = 'wide'
 )
 
 st.markdown("""
