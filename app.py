@@ -76,8 +76,8 @@ if image:
         #predicted_class = names[int(cls)]
         # break
 
-#if picture:
-#    st.image(picture)
+if image:
+    st.image(image)
 
 def display_info(predicted_class):
 
@@ -91,13 +91,19 @@ def display_info(predicted_class):
         st.write("Nestor Martin, model with « belly » Style Renaissance Flamande N° 3130.")
         st.image("resources/1B.png")
 
-    elif predicted_class == 'Cruls-de-Zeelhem-N-1191':
-        st.markdown("Detected Balcony: **15-BNS0 Cruls de Zeelhem N°1191 | 43-RNS0 Cruls de Zeelhem N°1191**")
-        st.write("""De Zeelhem Cruls N° 1191 Série R” for standard width panels – the leafs on the corners of the balcony have N°1170.
-                The original commercial catalogue mentions that this was “a modèle de réclame” (a publicity model). De Zeelhem Cruls N° 1191 Série R” 
-                for standard width panels –. The original commercial catalogue mentions that this panel exists in straight and bellied 
-                configuration. It was “often asked for”. It also exists in bellied panels (43-RNS0)""")
+    elif predicted_class == '43-RNS0-Cruls-N-1191':
+        st.markdown("Detected Balcony: **43-RNS0 Cruls de Zeelhem N°1191**")
+        st.write(""" “De Zeelhem Cruls N° 1191 Série R” for standard width panels –. The original commercial catalogue mentions that this 
+                 panel exists in straight and bellied configuration. It was “often asked for”. It also exists in bellied panels (43-RNS0). 
+                 The catalogue mentions furthermore that “this model is very nice and often asked for”.""")
         st.image("resources/2.png")
+
+    elif predicted_class == '15-BNS0-Cruls-N-1191':
+        st.markdown("Detected Balcony: **15-BNS0 Cruls de Zeelhem N°1191**")
+        st.write(""" “De Zeelhem Cruls N° 1191 Série R” for standard width panels – the leafs on the corners of the balcony have N°1170. 
+                 The original commercial catalogue mentions that this was “a modèle de réclame” (a publicity model). 
+                 It also exists in bellied panels (43-RNS0). The catalogue mentions furthermore that “this model is very nice and often asked".""")
+        st.image("resources/2B.png")
 
     elif predicted_class == 'Nestor-Martin-2748':
         st.markdown("Detected Balcony: **31-BNS0 Nestor Martin N°2748**")
@@ -106,24 +112,17 @@ def display_info(predicted_class):
 
     elif predicted_class == 'Nestor-Martin-N-3211':
         st.markdown("Detected Balcony: **24-BNS0 Nestor Martin motief = 3211 (R)**")
-        st.write("""Nestor Martin N°3211 Style Flemish Renaissance” for standard width panels –
-                The illustration from the original commercial catalogue shows a flat panel, 
-                but the picture shows that there has been a bellied execution as well""")
+        st.write(""" “Nestor Martin N°3211 Style Flemish Renaissance” for standard width panels – The illustration from the original commercial 
+                 catalogue shows a flat panel, but the picture shows that there has been a bellied execution as well. We did not find the 
+                 picture of the bellied panel in the catalogueso far.""")
         st.image("resources/4.png")
 
-    elif predicted_class == 'Nestor-Martin-N-3181-R':
-        st.markdown("Detected Balcony: **45-RNS0 Nestor Martin N° 3181**")
+    elif predicted_class == 'Nestor-Martin-N-3181':
+        st.markdown("Detected Balcony: **45-RNS0 Nestor Martin N° 3181 | GDEBALU2-N (B) Nestor Martin (motief = 3181 R)**")
         st.write("""Nestor Martin N°3181 Style Flemish Renaissance” for standard width panels –
                 The illustration from the original commercial catalogue shows a flat panel,
                 but the picture shows that there has been a bellied execution as well.""")
         st.image("resources/5.png")
-
-    elif predicted_class == 'Nestor-Martin-N-3181-B':
-        st.markdown("Detected Balcony: **GDEBALU2-N (B) Nestor Martin (motief = 3181 R)**")
-        st.write("""Nestor Martin N°3181 Style Flemish Renaissance” for standard width panels – 
-                The illustration from the original commercial catalogue shows a flat panel,
-                but the picture shows that there has been a bellied execution as well.""")
-        st.image("resources/5B.png")
 
     elif predicted_class == 'Cruls-1235':
         st.markdown("Detected Balcony: **ALTNOVA-10 (R) Cruls N° 1235 – Série A**")
@@ -144,12 +143,43 @@ def display_info(predicted_class):
                 “Style Esthétique” – esthetic style. Nestor Martin N°3064 for standard width panels""")
         st.image("resources/8.png")
 
-    elif predicted_class == 'Cruls-1194':
-        st.markdown("Detected Balcony: **GDEBALU-3 Cruls N°1194 – Série R | ALTNOVA-17 (N) (B) Cruls N°1194 – Série R**")
-        st.write("""The illustration from the original catalogue from the casting company Cruls de Zeelhem.
-                The catalogue mentions that the model exists in straight and belly execution and that it is being frequently asked
-                for (i.e. it is a popular model)""")
+    elif predicted_class == 'GDEBALU-3-Cruls-1194':
+        st.markdown("Detected Balcony: **GDEBALU-3 Cruls N°1194 – Série R**")
+        st.write("""The illustration from the original catalogue from the casting company Cruls de Zeelhem. 
+                 The catalogue mentions that the model exists in straight and belly execution and that it is being 
+                 frequently asked for (i.e. it is a popular model)""")
         st.image("resources/9.png")
+
+    elif predicted_class == 'ALTNOVA-17-Cruls-1194':
+        st.markdown("Detected Balcony: **ALTNOVA-17 (N) (B) CrulsN°1194 – Série R**")
+        st.write("""The illustration from the original catalogue from the casting company Cruls de Zeelhem. 
+                 The catalogue mentions that the model exists in straight and belly execution and that it is being 
+                 frequently asked for (i.e. it is a popular model)""")
+        st.image("resources/9B.png")
+
+    elif predicted_class == '18-RNS1-VG-13':
+        st.markdown("Detected Balcony: **18-RNS1 – getekend VG 13**")
+        st.error("Sorry no historical information for this Balcony found.")
+
+    elif predicted_class == 'ALTNOVA-15-VG-14':
+        st.markdown("Detected Balcony: **ALTNOVA-15 (BN) (=19) getekend VG 14**")
+        st.error("Sorry no historical information for this Balcony found.")
+
+    elif predicted_class == 'Cruls-1213':
+        st.markdown("Detected Balcony: **07-RNS0 Cruls N° 1213 Série B**")
+        st.error("Sorry no historical information for this Balcony found.")
+
+    elif predicted_class == 'Cruls-1147':
+        st.markdown("Detected Balcony: **26-RNS1 Cruls N° 1147 Série E**")
+        st.error("Sorry no historical information for this Balcony found.")
+
+    elif predicted_class == 'Cruls-Style-Renaissance':
+        st.markdown("Detected Balcony: **ALTNOVA-16 Cruls Style Renaissance, série D**")
+        st.error("Sorry no historical information for this Balcony found.")
+
+    elif predicted_class == 'ALTNOVA-01':
+        st.markdown("Detected Balcony: **ALTNOVA-01**")
+        st.error("Sorry no historical information for this Balcony found.")
 
     elif predicted_class == 404:
             st.error("Sorry unable to detect any Balconies in the Image.")
